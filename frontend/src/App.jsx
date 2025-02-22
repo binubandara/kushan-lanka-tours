@@ -12,27 +12,30 @@ import LoginPage from './components/loginPage';
 import './App.css'
 import About from './components/About';
 import Footer from './components/Footer';
+import GoogleAuthProvider from './components/GoogleAuthProvider';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <main className="container-fluid">
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/gallery" element={<ImageGallery />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path='login' element={<LoginPage/>} />
-            <Route path="/tours" element={<Tours />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/tours/snorkeling-diving" element={<SnorkelingTourDetail />} />
-            <Route path="/tours/tour-de-galle" element={<BicycleTourDetail />} />
-          </Routes>
-        </main>
-        <Footer/>
-      </div>
-    </Router>
+    <GoogleAuthProvider>
+      <Router>
+        <div className="App">
+          <Header />
+          <main className="container-fluid">
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/gallery" element={<ImageGallery />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path='login' element={<LoginPage/>} />
+              <Route path="/tours" element={<Tours />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/tours/snorkeling-diving" element={<SnorkelingTourDetail />} />
+              <Route path="/tours/tour-de-galle" element={<BicycleTourDetail />} />
+            </Routes>
+          </main>
+          <Footer/>
+        </div>
+      </Router>
+    </GoogleAuthProvider>
   );
 }
 
