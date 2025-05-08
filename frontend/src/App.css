@@ -1,0 +1,90 @@
+/* Navigation link hover effects */
+.nav-link-hover {
+  position: relative;
+}
+
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link-hover:hover::after {
+  width: 70%;
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.3s ease !important;
+}
+
+.btn-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Ensure mobile menu is above other content */
+.navbar {
+  z-index: 1030;
+}
+
+.homepage-banner {
+  background-image: url("../public/images/Beach_homepage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh;
+  width: 100vw;
+  position: relative;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  height: 100%; /* Make all cards the same height */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-top {
+  height: 200px; /* Adjust as needed */
+  object-fit: cover;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center; /* Align text properly */
+}
+
+@media (max-width: 768px) {
+  .homepage-banner {
+    min-height: 80vh;
+  }
+  
+  .homepage-banner h1 {
+    font-size: 2rem !important; /* Smaller font size on mobile */
+  }
+  
+  .homepage-banner p {
+    font-size: 1rem !important;
+  }
+  
+  .hero-content {
+    padding-top: 2rem;
+  }
+}
+
+footer {
+  margin-top: auto;
+}
